@@ -164,8 +164,8 @@
   ?>
 
 
-  <div id="chartContainer1" style="height: 370px; width: 100%;"></div>
-  <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+  <div id="chartContainer1" style="height: 370px; width: 50%;"></div>
+  <div id="chartContainer2" style="height: 370px; width: 50%;"></div>
 
   <!-- Load graphs using CanvasJS -->
   <script>
