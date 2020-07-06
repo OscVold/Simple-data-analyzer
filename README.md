@@ -5,4 +5,5 @@ Install the database locally using the steps outlined here: https://github.com/d
 Then run the program on localhost using XAMPP.    
 
 # Sample outout  
-![sample output](https://user-images.githubusercontent.com/48950894/86373659-ec55b900-bc83-11ea-92f9-2bb6736f0018.PNG)
+![sample out](https://user-images.githubusercontent.com/48950894/86606383-34d4e580-bfa8-11ea-8308-8bdea00dc47d.PNG)
+
