@@ -108,51 +108,51 @@
 
   mysqli_close($link);
 
-  $SalaryDepartment = array_combine($employeeSalary,$employeeDepartment);
+  $salaryDepartment = array_combine($employeeSalary,$employeeDepartment);
 
 
-  function getMinFromDep_($arr,$dep) {
-    return min(array_keys(array_filter($arr, function($v,$k) use ($dep) {
-      return $v == $dep;
+  function getMinFromDep_($arr,$departmentID) {
+    return min(array_keys(array_filter($arr, function($value,$key) use ($departmentID) {
+      return $value == $departmentID;
     }, ARRAY_FILTER_USE_BOTH)));
   }
 
-  function getMaxFromDep_($arr,$dep) {
-    return max(array_keys(array_filter($arr, function($v,$k) use ($dep) {
-      return $v == $dep;
+  function getMaxFromDep_($arr,$departmentID) {
+    return max(array_keys(array_filter($arr, function($value,$key) use ($departmentID) {
+      return $value == $departmentID;
     }, ARRAY_FILTER_USE_BOTH)));
   }
 
-  function getAverageFromDep_($arr,$dep) {
-    $res = array_keys(array_filter($arr, function($v,$k) use ($dep) {
-      return $v == $dep;
+  function getAverageFromDep_($arr,$departmentID) {
+    $res = array_keys(array_filter($arr, function($value,$key) use ($departmentID) {
+      return $value == $departmentID;
     }, ARRAY_FILTER_USE_BOTH));
     return array_sum($res)/count($res);
   }
 
   // create datasets
-  $ColChartDataPoints =  array(
-    array("y" => getAverageFromDep_($SalaryDepartment,'d001'), "label" => "Marketing" ),
-    array("y" => getAverageFromDep_($SalaryDepartment,'d002'), "label" => "Finance" ),
-    array("y" => getAverageFromDep_($SalaryDepartment,'d003'), "label" => "Human Resources" ),
-    array("y" => getAverageFromDep_($SalaryDepartment,'d004'), "label" => "Production" ),
-    array("y" => getAverageFromDep_($SalaryDepartment,'d005'), "label" => "Development" ),
-    array("y" => getAverageFromDep_($SalaryDepartment,'d006'), "label" => "Quality Management" ),
-    array("y" => getAverageFromDep_($SalaryDepartment,'d007'), "label" => "Sales" ),
-    array("y" => getAverageFromDep_($SalaryDepartment,'d008'), "label" => "Research" ),
-    array("y" => getAverageFromDep_($SalaryDepartment,'d009'), "label" => "Customer Service" )
+  $colChartDataPoints =  array(
+    array("y" => getAverageFromDep_($salaryDepartment,'d001'), "label" => "Marketing" ),
+    array("y" => getAverageFromDep_($salaryDepartment,'d002'), "label" => "Finance" ),
+    array("y" => getAverageFromDep_($salaryDepartment,'d003'), "label" => "Human Resources" ),
+    array("y" => getAverageFromDep_($salaryDepartment,'d004'), "label" => "Production" ),
+    array("y" => getAverageFromDep_($salaryDepartment,'d005'), "label" => "Development" ),
+    array("y" => getAverageFromDep_($salaryDepartment,'d006'), "label" => "Quality Management" ),
+    array("y" => getAverageFromDep_($salaryDepartment,'d007'), "label" => "Sales" ),
+    array("y" => getAverageFromDep_($salaryDepartment,'d008'), "label" => "Research" ),
+    array("y" => getAverageFromDep_($salaryDepartment,'d009'), "label" => "Customer Service" )
   );
 
   $rangeBarDataPoints = array(
-    array("label"=> "Marketing", "y"=> array(getMinFromDep_($SalaryDepartment,'d001'), getMaxFromDep_($SalaryDepartment,'d001'))),
-    array("label"=> "Finance", "y"=> array(getMinFromDep_($SalaryDepartment,'d002'), getMaxFromDep_($SalaryDepartment,'d002'))),
-    array("label"=> "Human Resources", "y"=> array(getMinFromDep_($SalaryDepartment,'d003'), getMaxFromDep_($SalaryDepartment,'d003'))),
-    array("label"=> "Production", "y"=> array(getMinFromDep_($SalaryDepartment,'d004'), getMaxFromDep_($SalaryDepartment,'d004'))),
-    array("label"=> "Development", "y"=> array(getMinFromDep_($SalaryDepartment,'d005'), getMaxFromDep_($SalaryDepartment,'d005'))),
-    array("label"=> "Quality Management", "y" => array(getMinFromDep_($SalaryDepartment,'d006'), getMaxFromDep_($SalaryDepartment,'d006'))),
-    array("label"=> "Sales", "y"=> array(getMinFromDep_($SalaryDepartment,'d007'), getMaxFromDep_($SalaryDepartment,'d007'))),
-    array("label"=> "Research", "y"=> array(getMinFromDep_($SalaryDepartment,'d008'), getMaxFromDep_($SalaryDepartment,'d008'))),
-    array("label"=> "Customer Service", "y"=> array(getMinFromDep_($SalaryDepartment,'d009'), getMaxFromDep_($SalaryDepartment,'d009')))
+    array("label"=> "Marketing", "y"=> array(getMinFromDep_($salaryDepartment,'d001'), getMaxFromDep_($salaryDepartment,'d001'))),
+    array("label"=> "Finance", "y"=> array(getMinFromDep_($salaryDepartment,'d002'), getMaxFromDep_($salaryDepartment,'d002'))),
+    array("label"=> "Human Resources", "y"=> array(getMinFromDep_($salaryDepartment,'d003'), getMaxFromDep_($salaryDepartment,'d003'))),
+    array("label"=> "Production", "y"=> array(getMinFromDep_($salaryDepartment,'d004'), getMaxFromDep_($salaryDepartment,'d004'))),
+    array("label"=> "Development", "y"=> array(getMinFromDep_($salaryDepartment,'d005'), getMaxFromDep_($salaryDepartment,'d005'))),
+    array("label"=> "Quality Management", "y" => array(getMinFromDep_($salaryDepartment,'d006'), getMaxFromDep_($salaryDepartment,'d006'))),
+    array("label"=> "Sales", "y"=> array(getMinFromDep_($salaryDepartment,'d007'), getMaxFromDep_($salaryDepartment,'d007'))),
+    array("label"=> "Research", "y"=> array(getMinFromDep_($salaryDepartment,'d008'), getMaxFromDep_($salaryDepartment,'d008'))),
+    array("label"=> "Customer Service", "y"=> array(getMinFromDep_($salaryDepartment,'d009'), getMaxFromDep_($salaryDepartment,'d009')))
   );
 
   // stop timer and print time elapsed
@@ -215,7 +215,7 @@
       data: [{
         type: "column",
         yValueFormatString: "$#,##0.## ",
-        dataPoints: <?php echo json_encode($ColChartDataPoints, JSON_NUMERIC_CHECK); ?>
+        dataPoints: <?php echo json_encode($colChartDataPoints, JSON_NUMERIC_CHECK); ?>
       }]
     });
 
